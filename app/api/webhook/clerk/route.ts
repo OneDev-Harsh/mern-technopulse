@@ -3,6 +3,9 @@ import { createClerkClient } from '@clerk/nextjs/server';
 import { verifyWebhook } from '@clerk/nextjs/webhooks';
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = "nodejs";
+console.log("🧠 Webhook route runtime:", process.env.NEXT_RUNTIME || 'node');
+
 // Create a Clerk client instance
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
